@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JARAM</title>
+	<style>
+		body {
+			background-color: black;
+			color: white;
+			font-family: Arial, sans-serif;
+		}
+		.header {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 20px;
+		}
+		.logo {
+			font-size: 52px;
+			font-weight: bold;
+		}
+		.nav {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+		}
+		.nav a {
+			color: white;
+			text-decoration: none;
+			padding: 10px;
+			margin: 0 10px;
+			border-right: 1px solid white;
+			transition: all 0.3s ease-in-out;
+		}
+		.nav a:hover {
+			background-color: white;
+			color: black;
+		}
+		.line {
+			border-bottom: 1px solid white;
+			margin-bottom: 30px;
+		}
+		.container {
+			position: relative;
+			text-align: center;
+		}
+		.image {
+			display: block;
+			margin: 0 auto;
+			width: 100%;
+			max-width: 2000px;
+			height: 800px;
+		}
+		.overlay {
+			position: absolute;
+			top: 30%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			color:white;
+			font-size: 76px;
+			font-weight: bold;
+            -webkit-text-stroke: 3px black;
+		}
+	</style>
+</head>
+<body>
+	<header class="header">
+		<div class="logo">JARAM</div>
+		<nav class="nav">
+			<a href="#">Home</a>
+			<a href="#">Phase</a>
+			<a href="#">Share Idea</a>
+			<a href="#">Contact Us</a>
+		</nav>
+	</header>
+	<div class="line"></div>
+	<div class="phase_image">
+        <img src="img/phase_1.png" width="80%"></img>
+        <img src="img/phase_2.png" width="85%"></img>
+        
+    </div>
+</body>
+</html>
