@@ -61,6 +61,50 @@
             -webkit-text-stroke: 3px black;
 		}
 	</style>
+	<!--contact-->
+    <style>
+		
+		h1 {
+			font-size: 48px;
+			font-weight: bold;
+			margin-bottom: 50px;
+		}
+		.email {
+			font-size: 24px;
+			margin-bottom: 20px;
+		}
+		.social {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+			margin-top: 50px;
+		}
+		.social a {
+			display: block;
+			margin: 0 10px;
+			width: 50px;
+			height: 50px;
+			background-color: white;
+			border-radius: 50%;
+			text-align: center;
+			line-height: 50px;
+			font-size: 24px;
+			color: black;
+			text-decoration: none;
+			transition: all 0.2s ease-in-out;
+		}
+
+		.social img{
+			width:100%;
+			border-radius: 50%;
+
+		}
+		.social a:hover {
+			background-color: #444444;
+			color: white;
+		}
+	</style>
 </head>
 <body>
 	<header class="header">
@@ -73,10 +117,82 @@
 		</nav>
 	</header>
 	<div class="line"></div>
-	<div class="phase_image">
-        <img src="img/phase_1.png" width="80%"></img>
-        <img src="img/phase_2.png" width="85%"></img>
-        
-    </div>
+
+	<!--phase started-->
+	<div style="font-size:40px">
+		<center>
+			Our Project Phases
+			</center>
+		</div>
+	<canvas id="path-line"></canvas>
+
+	<script>
+		var canvas = document.getElementById("path-line");
+		canvas.width = window.innerWidth;
+		canvas.height = window.innerHeight+300;
+		var ctx = canvas.getContext("2d");
+		var points = [
+        {x: 150, y: 100, color: "blue", text: "Starting"},
+			{x: 600, y: 300, color: "red", text: "Ai news"},
+			{x: 300, y: 450, color: "green", text: "Ai Study"},
+			{x: 700, y: 550, color: "blue", text: "Ai Weather"},
+			{x: 400, y: 750, color: "orange", text: "Ai Social"},
+            {x: 600, y: 850, color: "lime", text: "Etc"},
+            
+		];
+
+		ctx.beginPath();
+		ctx.strokeStyle = "lime";
+		ctx.lineWidth = 2;
+
+		var point1 = points[0];
+		var point2 = points[1];
+		ctx.moveTo(point1.x, point1.y);
+		ctx.lineTo(point2.x, point2.y);
+
+		ctx.stroke();
+
+		ctx.beginPath();
+		ctx.strokeStyle = "white";
+		ctx.lineWidth = 2;
+
+		for (var i = 1; i < points.length - 1; i++) {
+			var point1 = points[i];
+			var point2 = points[i+1];
+			ctx.moveTo(point1.x, point1.y);
+			ctx.lineTo(point2.x, point2.y);
+		}
+
+		ctx.stroke();
+
+		for (var i = 0; i < points.length; i++) {
+			var point = points[i];
+			ctx.fillStyle = point.color;
+			ctx.beginPath();
+			ctx.arc(point.x, point.y, 20, 0, 2*Math.PI);
+			ctx.fill();
+
+			ctx.fillStyle = "white";
+			ctx.font = "bold 20px Arial";
+			ctx.textAlign = "center";
+			ctx.fillText(point.text, point.x+20, point.y-50);
+		}
+	</script>
+</div>
+
+ <!--contact -->
+ <div>
+	<Center>
+		 <h1>Contact Us</h1>
+ <div class="email">Email: jaram@gmail.com</div>
+	</center>
+ </div>
+ <div class="social">
+	 <a href="https://www.facebook.com"><img src="img/facebook.jpg" width="50%"></img><i class="fab fa-facebook-f"></i></a>
+	 <a href="https://www.instagram.com"><img src="img/insta.jpg" width="50%"></img><i class="fab fa-instagram"></i></a>
+	 <a href="https://wwlw.telegram.com"><img src="img/telegram.jpg" width="50%"></img><i class="fab fa-telegram"></i></a>
+	 <a href="https://www.twitter.com"><img src="img/twitter.jpg" width="50%"></img><i class="fab fa-twitter"></i></a>
+ </div>
+	
 </body>
 </html>
